@@ -1,14 +1,19 @@
 from flask import Flask, request, url_for, redirect, render_template, jsonify
 from pycaret.regression import *
 import pandas as pd
-import pickle
 import numpy as np
 
 app = Flask(__name__)
 
-model = load_model('deployment_v1')
-cols = ['age','sex','bmi','children','smoker','region']
+#---- CONFIG -------------
+# Name for the model to use
+model_name = 'deployment_v1'
 
+# Columns existing in the model
+cols = ['age','sex','bmi','children','smoker','region']
+# ------------------------
+
+model = load_model('trained_models/'+model_name)
 
 @app.route('/')
 def index():
