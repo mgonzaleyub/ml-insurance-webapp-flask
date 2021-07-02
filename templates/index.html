@@ -101,21 +101,28 @@
                     <h2 class="pfblock-title">About this project</h2>
                     <div class="pfblock-line"></div>
                     <div align="justify" class="pfblock-subtitle" text-justify="distribute">
-                        I am Manuel, and I was born in Extremadura, Spain. I finished Software Engineering degree at
-                        University of Extremadura in 2020.
-                        However, my most important discovery occurred in 2019: Artificial Intelligence and data
-                        analysis. 🧠 🔬📈 <br>
+                        <p>
+                            This web-app uses a machine-learning model to predict the medical cost bill
+                            by health insurance according to the following features:
+                            <ul>
+                        <li> age: age of primary beneficiary</li>
 
-                        I've been working with Python, using TensorFlow, Scikit-Learn, Keras, Numpy, Pandas,
-                        Matplotlib and so on. I've worked with time series
-                        data, and convolutional neural networks.
-                        I've built classification and regression systems too. 📚🔍<br>
+                        <li> sex: insurance contractor gender, female, male </li>
 
-                        I want to face new and complex problems to which AI can offer solutions, turning data into
-                        knowledge; accompanied by a good team that shares this interest.<br>
+                            <li> bmi: Body mass index, providing an understanding of body, weights that are relatively high or low relative to height,
+                        objective index of body weight (kg / m ^ 2) using the ratio of height to weight, ideally 18.5 to 24.9</li>
 
-                        If you are curious, contact me! 📩<br>
+                        <li> children: Number of children covered by health insurance / Number of dependents </li>
 
+                        <li> smoker: Smoking </li>
+
+                        <li> region: the beneficiary's residential area in the US, northeast, southeast, southwest, northwest.</li>
+
+                    </ul>
+                            The following form requires you to introduce the previous data to get a prediction.
+                            The AI that models this data is <a href="http://www.stat.yale.edu/Courses/1997-98/101/linreg.htm"> linear regression</a>
+
+                        </p>
                         <a href="https://www.kaggle.com/mirichoi0218/insurance#insurance.csv">Dataset used for AI</a>
                     </div>
                 </div>
@@ -128,7 +135,7 @@
             <div class="col-sm-3 col-sm-offset-4">
 
                 <div class="iconbox wow ">
-                    <form action="{{url_for('predict')}}" method="POST">
+                    <form id="insurance_form" action="{{url_for('predict')}}" method="POST">
                         <label for="age">Age (0 or more)</label><br>
                         <input id="age" name="age" placeholder="Age" required="required" type="text"/><br>
 
